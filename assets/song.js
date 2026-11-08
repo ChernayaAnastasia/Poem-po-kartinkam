@@ -123,6 +123,7 @@ document.addEventListener('voiceschanged', fillVoices);
 $('#voiceSel').addEventListener('change', e => { voiceSet.voice=e.target.value; saveVoice(); });
 $('#rateIn').addEventListener('input', e => { voiceSet.rate=+e.target.value; saveVoice(); });
 $('#testVoice').addEventListener('click', () => speak('Привет! Давай вместе нарисуем песню.'));
+$('#sayBtn').addEventListener('click', () => speak($('#sayIn').value || 'на коняшке'));
 $('#openSettings').addEventListener('click', () => { stopAll(); fillVoices(); $('#rateIn').value=voiceSet.rate||.85; $('#settings').hidden=false; $('#play').hidden=true; $('#foot').hidden=true; });
 $('#closeSettings').addEventListener('click', () => { $('#settings').hidden=true; $('#play').hidden=false; $('#foot').hidden=false; render(); });
 $('#printText').addEventListener('change', buildPrint);

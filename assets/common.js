@@ -53,8 +53,18 @@ function loadVoices(){
 }
 if(canSpeak){ loadVoices(); try{ speechSynthesis.onvoiceschanged = loadVoices }catch(e){} }
 const currentVoice = () => voices.find(v=>v.name===voiceSet.voice) || voices[0] || null;
+/* Словарь произношения: pronounce.json в корне сайта (слово → как читать, с ударением) */
+let PRON = {};
+fetch('pronounce.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : {}).then(d => { PRON = d || {}; }).catch(() => {});
+function pronounce(t){
+  return String(t).replace(/[А-Яа-яЁё]+/g, w => {
+    const v = PRON[w.toLowerCase()] ?? PRON[w.toLowerCase().replace(/ё/g,'е')];
+    if(!v || typeof v !== 'string') return w;
+    return w[0] === w[0].toUpperCase() ? v[0].toUpperCase() + v.slice(1) : v;
+  });
+}
 function utter(t){
-  const u = new SpeechSynthesisUtterance(t); u.lang = 'ru-RU';
+  const u = new SpeechSynthesisUtterance(pronounce(t)); u.lang = 'ru-RU';
   const v = currentVoice(); if(v) u.voice = v;
   u.rate = voiceSet.rate || .85; u.pitch = 1.05; return u;
 }
