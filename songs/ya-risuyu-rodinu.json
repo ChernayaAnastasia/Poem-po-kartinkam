@@ -1,0 +1,37 @@
+{
+  "title": "Я рисую Родину",
+  "credits": "слова П. Синявского, музыка А. Жарова",
+  "listen": {"label": "Послушать песню в исполнении хора школы раннего развития «Малышок» (центр «Радость»)", "url": "https://youtu.be/vDvxXo16OcY"},
+  "verses": [
+    [
+      {"text": "", "pictures": ["drawing"]},
+      {"text": "", "pictures": ["field"]},
+      {"text": "", "pictures": ["church"]},
+      {"text": "", "pictures": ["cloud"]},
+      {"text": "", "pictures": ["drawing"]},
+      {"text": "", "pictures": ["mom", "friends"]},
+      {"text": "", "pictures": ["drawing"]},
+      {"text": "", "pictures": ["homeland"]}
+    ],
+    [
+      {"text": "", "pictures": ["drawing"]},
+      {"text": "", "pictures": ["dawn"]},
+      {"text": "", "pictures": ["grove", "river"]},
+      {"text": "", "pictures": ["sun", "summer"]},
+      {"text": "", "pictures": ["drawing"]},
+      {"text": "", "pictures": ["brook"]},
+      {"text": "", "pictures": ["drawing"]},
+      {"text": "", "pictures": ["homeland"]}
+    ],
+    [
+      {"text": "", "pictures": ["drawing"]},
+      {"text": "", "pictures": ["daisy"]},
+      {"text": "", "pictures": ["path"]},
+      {"text": "", "pictures": ["horse"]},
+      {"text": "", "pictures": ["drawing"]},
+      {"text": "", "pictures": ["rainbow", "me"]},
+      {"text": "", "pictures": ["drawing"]},
+      {"text": "", "pictures": ["homeland"]}
+    ]
+  ]
+}

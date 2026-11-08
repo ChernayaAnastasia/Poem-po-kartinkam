@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Песни в картинках</title>
+<link rel="icon" href="images/drawing.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@600;800&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="app">
+  <header>
+    <h1>Все песни</h1>
+    <p class="sub">Выберите песню. Ребёнок соберёт её из картинок и споёт по ним.</p>
+  </header>
+  <div id="error" class="error" hidden></div>
+  <nav id="songs" class="songs" aria-label="Песни"></nav>
+</div>
+<script src="assets/common.js"></script>
+<script>
+(async () => {
+  try{
+    await loadPictures();
+    const list = await getJSON('songs/index.json');
+    $('#songs').innerHTML = list.map(s => `<a class="song-card" href="song.html?song=${encodeURIComponent(s.id)}">
+      <span class="thumb"><img src="${esc(picSrc(s.cover||'drawing'))}" alt=""></span>
+      <span><b>${esc(s.title)}</b>${s.credits?`<span>${esc(s.credits)}</span>`:''}</span></a>`).join('');
+  }catch(err){
+    const e=$('#error'); e.hidden=false;
+    e.innerHTML=`<b>Список песен не открылся.</b><br>${esc(err.message)}<br>Если вы открыли файл прямо с компьютера, запустите сайт через GitHub Pages или локальный сервер (см. README).`;
+  }
+})();
+</script>
+</body>
+</html>

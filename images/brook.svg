@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="400" height="400"><defs><filter id="wc" x="-15%" y="-15%" width="130%" height="130%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="3" seed="4" result="warp"/>
+    <feDisplacementMap in="SourceGraphic" in2="warp" scale="4" xChannelSelector="R" yChannelSelector="G" result="wob"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="2" seed="11" result="grain"/>
+    <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.1 1.2" result="gmask"/>
+    <feComposite in="wob" in2="gmask" operator="in" result="tex"/>
+    <feMorphology in="wob" operator="erode" radius="0.7" result="inner"/>
+    <feComposite in="wob" in2="inner" operator="out" result="edge"/>
+    <feMerge><feMergeNode in="tex"/><feMergeNode in="edge"/></feMerge>
+  </filter></defs><g filter="url(#wc)"><path d="M4 60 Q50 50 96 60 V96 H4Z" fill="#86B25B" fill-opacity="0.8"/><path d="M4 74 Q24 64 44 74 T96 72 V88 Q74 96 50 86 T4 90Z" fill="#4F8ECF" fill-opacity="0.9"/><ellipse cx="26" cy="80" rx="7" ry="4" fill="#8E9DAB" fill-opacity="0.9"/><ellipse cx="66" cy="78" rx="8" ry="4.5" fill="#8E9DAB" fill-opacity="0.9"/><ellipse cx="84" cy="86" rx="5" ry="3" fill="#8E9DAB" fill-opacity="0.8"/></g><ellipse cx="35" cy="46" rx="7" ry="5" fill="#4A3A2E" transform="rotate(-22 35 46)"/><ellipse cx="61" cy="40" rx="7" ry="5" fill="#4A3A2E" transform="rotate(-22 61 40)"/><path d="M41.5 44 V16 M67.5 38 V11" fill="none" stroke="#4A3A2E" stroke-width="2.2" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M40.4 13 L68.6 8 L68.6 14 L40.4 19 Z" fill="#4A3A2E"/><path d="M58 70 q4 -3 8 0 M20 74 q4 -3 8 0" fill="none" stroke="#FCFBF7" stroke-width="1.6" stroke-opacity="0.9" stroke-linecap="round" stroke-linejoin="round"/></svg>

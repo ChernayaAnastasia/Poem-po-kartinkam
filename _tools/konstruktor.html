@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<base href="../">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Новая песня</title>
+<link rel="icon" href="images/drawing.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@600;800&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="app">
+  <a class="back" href="index.html">← На сайт</a>
+  <header>
+    <h1>Новая песня</h1>
+    <p class="sub">Конструктор только для вас: он открывается на вашем компьютере и на сайт не попадает. Готовый файл песни вы добавляете в репозиторий.</p>
+  </header>
+
+  <section class="panel">
+    <h2>1. О песне</h2>
+    <div class="field"><label for="fTitle">Название</label><input type="text" id="fTitle" placeholder="Например: Осенняя песенка"></div>
+    <div class="field"><label for="fId">Имя файла (латиницей, без пробелов)</label><input type="text" id="fId" placeholder="osennyaya-pesenka"></div>
+    <div class="field"><label for="fCredits">Авторы</label><input type="text" id="fCredits" placeholder="слова …, музыка …"></div>
+    <div class="field"><label for="fUrl">Ссылка на запись (необязательно)</label><input type="url" id="fUrl" placeholder="https://youtu.be/…"></div>
+    <div class="field"><label for="fListen">Надпись на кнопке записи</label><input type="text" id="fListen" placeholder="Послушать песню в исполнении …"></div>
+  </section>
+
+  <section class="panel">
+    <h2>2. Слова</h2>
+    <p class="tip">Вставьте текст песни. Куплеты разделите пустой строкой или подписями «1 куплет», «2 куплет». Строчки «Слова …» и «Музыка …» пропускаются сами.</p>
+    <textarea id="fText" rows="12"></textarea>
+    <div class="row left"><button class="btn primary" id="parseBtn">Разложить по картинкам</button></div>
+  </section>
+
+  <section class="panel" id="linesPanel" hidden>
+    <h2>3. Картинки к строчкам</h2>
+    <p class="tip">Нажмите на картинку слева от строчки, чтобы выбрать другую (можно одну или две). Своя картинка: положите файл в папку <code>images</code> и впишите его путь, например <code>images/kot.png</code>. Подпись под картинкой можно поменять.</p>
+    <div id="lines"></div>
+  </section>
+
+  <section class="panel" id="outPanel" hidden>
+    <h2>4. Готово</h2>
+    <div class="row left"><button class="btn primary" id="previewBtn">Посмотреть, как получится</button></div>
+    <h3>Файл песни</h3>
+    <p class="tip" id="fileHint"></p>
+    <textarea class="code" id="outSong" readonly></textarea>
+    <div class="row left"><button class="btn small" data-copy="outSong">Скопировать</button></div>
+    <h3>Строчка для списка песен</h3>
+    <p class="tip">Добавьте её в файл <code>songs/index.json</code> внутрь квадратных скобок, через запятую после других песен.</p>
+    <textarea class="code" id="outIndex" readonly style="min-height:90px"></textarea>
+    <div class="row left"><button class="btn small" data-copy="outIndex">Скопировать</button></div>
+  </section>
+</div>
+
+<script src="assets/common.js"></script>
+<script src="assets/make.js"></script>
+</body>
+</html>

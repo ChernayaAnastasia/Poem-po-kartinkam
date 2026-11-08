@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="400" height="400"><defs><filter id="wc" x="-15%" y="-15%" width="130%" height="130%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="3" seed="4" result="warp"/>
+    <feDisplacementMap in="SourceGraphic" in2="warp" scale="4" xChannelSelector="R" yChannelSelector="G" result="wob"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="2" seed="11" result="grain"/>
+    <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.1 1.2" result="gmask"/>
+    <feComposite in="wob" in2="gmask" operator="in" result="tex"/>
+    <feMorphology in="wob" operator="erode" radius="0.7" result="inner"/>
+    <feComposite in="wob" in2="inner" operator="out" result="edge"/>
+    <feMerge><feMergeNode in="tex"/><feMergeNode in="edge"/></feMerge>
+  </filter></defs><g filter="url(#wc)"><path d="M76.0 50.0L92.0 50.0M72.5 63.0L86.4 71.0M63.0 72.5L71.0 86.4M50.0 76.0L50.0 92.0M37.0 72.5L29.0 86.4M27.5 63.0L13.6 71.0M24.0 50.0L8.0 50.0M27.5 37.0L13.6 29.0M37.0 27.5L29.0 13.6M50.0 24.0L50.0 8.0M63.0 27.5L71.0 13.6M72.5 37.0L86.4 29.0" fill="none" stroke="#F2CB65" stroke-width="5" stroke-opacity="0.85" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="50" cy="50" rx="20" ry="20" fill="#F2CB65" fill-opacity="1"/><ellipse cx="55" cy="55" rx="14" ry="14" fill="#EF9548" fill-opacity="0.45"/></g><circle cx="45.5" cy="47" r="1.5" fill="#4A3A2E"/><circle cx="54.5" cy="47" r="1.5" fill="#4A3A2E"/><path d="M46 52 Q50 55 54 52" fill="none" stroke="#4A3A2E" stroke-width="1.3" stroke-opacity="1" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="43" cy="51" rx="2" ry="1.4" fill="#EBA2B4" fill-opacity="0.7"/><ellipse cx="57" cy="51" rx="2" ry="1.4" fill="#EBA2B4" fill-opacity="0.7"/></svg>

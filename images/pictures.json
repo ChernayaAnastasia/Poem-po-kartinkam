@@ -1,0 +1,188 @@
+{
+  "drawing": {
+    "file": "images/drawing.svg",
+    "label": "Рисунок",
+    "keywords": [
+      "рисун",
+      "картин",
+      "рисую"
+    ],
+    "exact": []
+  },
+  "field": {
+    "file": "images/field.svg",
+    "label": "Поле",
+    "keywords": [
+      "колос",
+      "поле",
+      "поля",
+      "полю",
+      "пшен",
+      "нив"
+    ],
+    "exact": []
+  },
+  "church": {
+    "file": "images/church.svg",
+    "label": "Церковь",
+    "keywords": [
+      "церк",
+      "храм"
+    ],
+    "exact": []
+  },
+  "cloud": {
+    "file": "images/cloud.svg",
+    "label": "Облака",
+    "keywords": [
+      "облак",
+      "туч"
+    ],
+    "exact": []
+  },
+  "mom": {
+    "file": "images/mom.svg",
+    "label": "Мама",
+    "keywords": [
+      "мама",
+      "маму",
+      "мамы",
+      "маме",
+      "мамо",
+      "мамоч"
+    ],
+    "exact": []
+  },
+  "friends": {
+    "file": "images/friends.svg",
+    "label": "Друзья",
+    "keywords": [
+      "друз",
+      "друг",
+      "подруг"
+    ],
+    "exact": []
+  },
+  "dawn": {
+    "file": "images/dawn.svg",
+    "label": "Рассвет",
+    "keywords": [
+      "рассвет",
+      "лучи",
+      "лучик",
+      "заря",
+      "зари"
+    ],
+    "exact": []
+  },
+  "grove": {
+    "file": "images/grove.svg",
+    "label": "Роща",
+    "keywords": [
+      "рощ",
+      "лес",
+      "берез"
+    ],
+    "exact": []
+  },
+  "river": {
+    "file": "images/river.svg",
+    "label": "Речка",
+    "keywords": [
+      "реч",
+      "река",
+      "реки",
+      "реку",
+      "реке"
+    ],
+    "exact": []
+  },
+  "sun": {
+    "file": "images/sun.svg",
+    "label": "Солнце",
+    "keywords": [
+      "солн"
+    ],
+    "exact": []
+  },
+  "summer": {
+    "file": "images/summer.svg",
+    "label": "Лето",
+    "keywords": [
+      "лето",
+      "летом",
+      "лета"
+    ],
+    "exact": []
+  },
+  "brook": {
+    "file": "images/brook.svg",
+    "label": "Ручеёк",
+    "keywords": [
+      "ручь",
+      "руче",
+      "ручей",
+      "песен",
+      "песн"
+    ],
+    "exact": []
+  },
+  "daisy": {
+    "file": "images/daisy.svg",
+    "label": "Ромашки",
+    "keywords": [
+      "ромаш"
+    ],
+    "exact": []
+  },
+  "path": {
+    "file": "images/path.svg",
+    "label": "Тропинка",
+    "keywords": [
+      "тропин",
+      "скач"
+    ],
+    "exact": []
+  },
+  "horse": {
+    "file": "images/horse.svg",
+    "label": "Всадник",
+    "keywords": [
+      "всадн",
+      "кон",
+      "лошад"
+    ],
+    "exact": []
+  },
+  "rainbow": {
+    "file": "images/rainbow.svg",
+    "label": "Радуга",
+    "keywords": [
+      "радуг"
+    ],
+    "exact": []
+  },
+  "me": {
+    "file": "images/me.svg",
+    "label": "Я",
+    "keywords": [],
+    "exact": [
+      "я",
+      "меня"
+    ]
+  },
+  "homeland": {
+    "file": "images/homeland.svg",
+    "label": "Родина",
+    "keywords": [
+      "родин"
+    ],
+    "exact": []
+  },
+  "star": {
+    "file": "images/star.svg",
+    "label": "Звёздочка",
+    "keywords": [],
+    "exact": []
+  }
+}
