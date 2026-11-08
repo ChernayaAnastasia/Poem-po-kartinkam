@@ -124,3 +124,32 @@ textarea.code{font:13px/1.4 ui-monospace,Menlo,Consolas,monospace;min-height:160
   .pv-c .cap{font-size:9pt;padding:1mm 0 0}
   .pv-t{font-size:9pt;text-align:center;margin-top:1mm;line-height:1.2}
 }
+
+/* ---------- игра помещается на один экран ---------- */
+body.game{padding-bottom:0}
+body.game .app{gap:10px}
+body.game h1{font-size:clamp(24px,6vw,40px)}
+body.game .credits{font-size:13px;margin-top:2px}
+body.game .sub{display:none}
+body.game .back{font-size:14px}
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+body.game .verses{gap:6px}
+body.game .vbtn{min-width:44px;height:44px;border-radius:22px;font-size:20px;padding:0 10px}
+body.game .vbtn.all{font-size:14px}
+body.game .modes{display:flex;gap:6px}
+body.game .mode{padding:5px 10px;font-size:15px;gap:6px;border-radius:12px}
+body.game .mode img{width:28px;height:28px}
+body.game .sheet{padding:10px}
+body.game .grid{grid-template-columns:repeat(4,var(--t,minmax(0,1fr)));justify-content:center;gap:8px}
+body.game .vh{margin:10px 0 6px;font-size:13px}
+body.game .cap{font-size:clamp(8px,calc(var(--t,90px)*.115),11px);padding-bottom:5px}
+body.game .ctrl{position:sticky;bottom:0;z-index:5;background:var(--bg);gap:8px;
+  padding:8px 0 max(10px,env(safe-area-inset-bottom,0px));box-shadow:0 -10px 14px -10px rgba(15,50,60,.18)}
+body.game .line{font-size:clamp(18px,4.6vw,26px);min-height:1.3em}
+body.game .big{font-size:30px}
+body.game .tray{gap:6px}
+body.game .tt{width:var(--tt,72px)}
+body.game .btn{padding:9px 18px;font-size:16px}
+body.game .ctrl .tip{display:none}
+body.game .foot{flex-direction:column;align-items:center;gap:8px;padding:12px 0 24px}
+body.game .listen{margin-top:0}

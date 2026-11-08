@@ -49,8 +49,30 @@ function render(){
       <div class="row"><button class="btn" data-act="hint">Подсказать</button><button class="btn primary" data-act="next">Дальше</button></div>
       <div class="row"><button class="btn" data-act="${playing?'stop':'listen'}">${playing?'Стоп':(view<0||verses.length===1?'Послушать всю песню':'Послушать весь куплет')}</button></div>`;
   }
+  fit();
   if(view<0 && !done && pos>0){ const cur=document.querySelector('#grid .cur'); if(cur) try{ cur.scrollIntoView({block:'center',behavior:'smooth'}) }catch(e){} }
 }
+
+
+/* размер картинок подбирается так, чтобы рисунок и кнопки помещались на экран */
+function fit(){
+  const root = document.documentElement, grid = document.querySelector('#grid .grid');
+  if(!grid || $('#play').hidden) return;
+  const area = $('#grid').clientWidth, gap = 8;
+  const byW = Math.floor((area - 3*gap) / 4);
+  if(view < 0){ const t = Math.min(byW, 110); root.style.setProperty('--t', t+'px'); root.style.setProperty('--tt', '64px'); return; }
+  const rows = Math.ceil(L().length / 4);
+  for(let pass = 0; pass < 2; pass++){
+    const top = grid.getBoundingClientRect().top + window.scrollY;
+    const bottomSpace = $('#ctrl').offsetHeight + 10 + 8;
+    const byH = Math.floor((window.innerHeight - top - bottomSpace - (rows-1)*gap) / rows);
+    const t = Math.max(56, Math.min(byW, byH, 150));
+    root.style.setProperty('--t', t+'px');
+    root.style.setProperty('--tt', Math.max(52, Math.min(88, Math.round(t*.72)))+'px');
+  }
+}
+window.addEventListener('resize', fit);
+if(document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
 
 function burst(){
   if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;

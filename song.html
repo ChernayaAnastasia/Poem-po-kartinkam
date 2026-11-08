@@ -10,24 +10,25 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@600;800&family=Nunito:wght@400;600;700;800&display=swap">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body data-stats-manual>
+<body data-stats-manual class="game">
 <div class="app">
   <a class="back" id="back" href="pesni.html" hidden>← Все песни</a>
   <header>
     <h1 id="title">Песня в картинках</h1>
     <p id="credits" class="credits" hidden></p>
-    <a id="listen" class="listen" href="#" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><span></span></a>
     <p id="sub" class="sub"></p>
   </header>
 
   <div id="error" class="error" hidden></div>
 
   <main id="play" hidden>
+    <div class="toolbar">
     <nav id="verses" class="verses" aria-label="Куплет"></nav>
     <nav id="modes" class="modes" aria-label="Что делаем">
       <button class="mode" data-mode="build"><img src="images/puzzle.svg" alt="">Собираем</button>
       <button class="mode" data-mode="sing"><img src="images/notes.svg" alt="">Поём</button>
     </nav>
+    </div>
     <section class="sheet" aria-label="Рисунок">
       <div id="grid"></div>
       <div id="confetti"></div>
@@ -47,6 +48,7 @@
   </section>
 
   <div class="foot" id="foot" hidden>
+    <a id="listen" class="listen" href="#" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><span></span></a>
     <button class="link" id="openSettings">Голос и печать</button>
   </div>
 </div>
