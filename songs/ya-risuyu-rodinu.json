@@ -4,34 +4,34 @@
   "listen": {"label": "Послушать песню в исполнении хора школы раннего развития «Малышок» (центр «Радость»)", "url": "https://youtu.be/vDvxXo16OcY"},
   "verses": [
     [
-      {"text": "", "pictures": ["drawing"]},
-      {"text": "", "pictures": ["field"]},
-      {"text": "", "pictures": ["church"]},
-      {"text": "", "pictures": ["cloud"]},
-      {"text": "", "pictures": ["drawing"]},
-      {"text": "", "pictures": ["mom", "friends"]},
-      {"text": "", "pictures": ["drawing"]},
-      {"text": "", "pictures": ["homeland"]}
+      {"text": "На моём рисунке", "pictures": ["drawing"]},
+      {"text": "Поле с колосками", "pictures": ["field"]},
+      {"text": "Церковь на пригорке", "pictures": ["church"]},
+      {"text": "Рядом с облаками", "pictures": ["cloud"]},
+      {"text": "На моём рисунке", "pictures": ["drawing"]},
+      {"text": "Мама и друзья", "pictures": ["mom", "friends"]},
+      {"text": "На моём рисунке", "pictures": ["drawing"]},
+      {"text": "Родина моя", "pictures": ["homeland"]}
     ],
     [
-      {"text": "", "pictures": ["drawing"]},
-      {"text": "", "pictures": ["dawn"]},
-      {"text": "", "pictures": ["grove", "river"]},
-      {"text": "", "pictures": ["sun", "summer"]},
-      {"text": "", "pictures": ["drawing"]},
-      {"text": "", "pictures": ["brook"]},
-      {"text": "", "pictures": ["drawing"]},
-      {"text": "", "pictures": ["homeland"]}
+      {"text": "На моём рисунке", "pictures": ["drawing"]},
+      {"text": "Лучики рассвета", "pictures": ["dawn"]},
+      {"text": "Рощица и речка", "pictures": ["grove", "river"]},
+      {"text": "Солнышко и лето", "pictures": ["sun", "summer"]},
+      {"text": "На моём рисунке", "pictures": ["drawing"]},
+      {"text": "Песенка ручья", "pictures": ["brook"]},
+      {"text": "На моём рисунке", "pictures": ["drawing"]},
+      {"text": "Родина моя", "pictures": ["homeland"]}
     ],
     [
-      {"text": "", "pictures": ["drawing"]},
-      {"text": "", "pictures": ["daisy"]},
-      {"text": "", "pictures": ["path"]},
-      {"text": "", "pictures": ["horse"]},
-      {"text": "", "pictures": ["drawing"]},
-      {"text": "", "pictures": ["rainbow", "me"]},
-      {"text": "", "pictures": ["drawing"]},
-      {"text": "", "pictures": ["homeland"]}
+      {"text": "На моём рисунке", "pictures": ["drawing"]},
+      {"text": "Выросли ромашки", "pictures": ["daisy"]},
+      {"text": "Скачет по тропинке", "pictures": ["path"]},
+      {"text": "Всадник на коняшке", "pictures": ["horse"]},
+      {"text": "На моём рисунке", "pictures": ["drawing"]},
+      {"text": "Радуга и я", "pictures": ["rainbow", "me"]},
+      {"text": "На моём рисунке", "pictures": ["drawing"]},
+      {"text": "Родина моя!", "pictures": ["homeland"]}
     ]
   ]
 }
