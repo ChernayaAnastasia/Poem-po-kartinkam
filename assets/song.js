@@ -69,7 +69,7 @@ $('#play').addEventListener('click', e => {
     if(same(lines[idx],lines[pos])){
       placed[pos]=true; justPlaced=pos; lastText=say(lines[pos]); speak(lastText);
       tray.splice(tray.indexOf(idx),1); pos++; wrong=0; hintT=null;
-      if(pos>=n){ done=true; burst(); }
+      if(pos>=n){ done=true; burst(); statsEvent(`sobrali-kuplet-${view+1}`, `Собрали куплет ${view+1}`); }
       render();
     } else {
       miss++; wrong++; t.classList.remove('no'); void t.offsetWidth; t.classList.add('no');
@@ -79,9 +79,9 @@ $('#play').addEventListener('click', e => {
   }
   const a=e.target.closest('[data-act]'); if(!a) return;
   switch(a.dataset.act){
-    case 'next': if(done) return; stopAll(); showText=false; pos++; if(pos>=n){ done=true; burst(); } break;
+    case 'next': if(done) return; stopAll(); showText=false; pos++; if(pos>=n){ done=true; burst(); statsEvent(view<0?'speli-vsyu-pesnyu':`speli-kuplet-${view+1}`, view<0?'Спели всю песню':`Спели куплет ${view+1}`); } break;
     case 'hint': showText=true; speak(say(lines[pos])); break;
-    case 'listen': pos=0; done=false; speakAll(lines.map(say), i=>{ pos=i; showText=true; render(); }, ()=>{ pos=n; done=true; burst(); render(); }); break;
+    case 'listen': statsEvent('poslushali-golosom', 'Послушали голосом'); pos=0; done=false; speakAll(lines.map(say), i=>{ pos=i; showText=true; render(); }, ()=>{ pos=n; done=true; burst(); render(); }); break;
     case 'stop': stopAll(); break;
     case 'again': reset(); break;
     case 'tosing': mode='sing'; reset(); break;
@@ -104,7 +104,8 @@ $('#testVoice').addEventListener('click', () => speak('Привет! Давай 
 $('#openSettings').addEventListener('click', () => { stopAll(); fillVoices(); $('#rateIn').value=voiceSet.rate||.85; $('#settings').hidden=false; $('#play').hidden=true; $('#foot').hidden=true; });
 $('#closeSettings').addEventListener('click', () => { $('#settings').hidden=true; $('#play').hidden=false; $('#foot').hidden=false; render(); });
 $('#printText').addEventListener('change', buildPrint);
-$('#printBtn').addEventListener('click', () => { buildPrint(); window.print(); });
+$('#printBtn').addEventListener('click', () => { buildPrint(); statsEvent('pechat', 'Распечатали песню'); window.print(); });
+$('#listen').addEventListener('click', () => statsEvent('zapis-hora', 'Открыли запись хора'));
 
 function buildPrint(){
   const withText = $('#printText').checked;
@@ -123,6 +124,7 @@ function normalizeSong(s){
 function showError(msg){ const e=$('#error'); e.hidden=false; e.innerHTML=msg; }
 
 (async function start(){
+  let id = '';
   try{
     await loadPictures();
     const params = new URLSearchParams(location.search);
@@ -132,7 +134,7 @@ function showError(msg){ const e=$('#error'); e.hidden=false; e.innerHTML=msg; }
     } else {
       const list = await getJSON('songs/index.json');
       if(list.length > 1) $('#back').hidden = false;
-      const id = params.get('song') || (list[0] && list[0].id);
+      id = params.get('song') || (list[0] && list[0].id);
       if(!id) throw new Error('Список песен пуст.');
       if(!/^[a-z0-9-]+$/i.test(id)) throw new Error('В ссылке неправильное имя песни.');
       song = await getJSON(`songs/${id}.json`);
@@ -144,6 +146,7 @@ function showError(msg){ const e=$('#error'); e.hidden=false; e.innerHTML=msg; }
     if(song.credits){ $('#credits').textContent = `(${song.credits})`; $('#credits').hidden=false; }
     if(song.listen && song.listen.url){ const a=$('#listen'); a.href=song.listen.url; a.querySelector('span').textContent=song.listen.label||'Послушать песню'; a.hidden=false; }
     $('#play').hidden=false; $('#foot').hidden=false;
+    statsPage(params.has('preview') ? 'chernovik' : id, song.title || '');
     reset(); render(); buildPrint();
   }catch(err){
     showError(`<b>Песня не открылась.</b><br>${esc(err.message)}`);
